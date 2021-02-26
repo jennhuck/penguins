@@ -1,0 +1,15 @@
+---
+title: "Palmer penguins - FAIL"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+penguins_fail <- readr::read_csv("data/penguins.csv")
+```
+
+## Fail!
+The above chunk does not work as expected.  When *report-fail.Rmd* is rendered, the working directory is internally set to <project root>/analysis by R Markdown.  The `analysis` folder is a sub-directory of `penguins`.  So even though our working directory is set to `penguins`, R Markdown is internally set to a different subdirectory, `analysis`.  A path that will work in the console doesn't work in the .Rmd file. 
+
+Copy and paste line 9 into the Console...it works there.

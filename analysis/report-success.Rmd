@@ -1,0 +1,86 @@
+---
+title: "Palmer penguins - SUCCESS"
+output: html_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+here::i_am("analysis/report-success.Rmd")
+library(here)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+penguins_success <- readr::read_csv(here("data/penguins.csv"))
+```
+
+## Success!
+
+This time our chunk worked.
+
+Now copy and paste line 12 into the Console and see if it works.
+
+Success again!
+
+## R Markdown
+
+### Code chunks
+
+Here is an example of a code chunk. Press *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button to run.
+
+```{r}
+lm(flipper_length_mm ~ body_mass_g + species, penguins_success)
+```
+
+You can insert plots. Press *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button to run.
+
+```{r plot}
+ggplot2::ggplot(penguins_success) + ggplot2::aes(x = body_mass_g, y = bill_length_mm) + ggplot2::geom_point()
+```
+
+Create a code chunk below with *CTRL + ALT + I* (Windows/Linux) or *CMD + ALT + I (Mac)*, or click on the green box with a C and plus-sign, then click R. Type **summary(penguins_success)** in between the pairs of three backticks. Then run with *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button.
+
+### Inline code
+
+The mean penguin flipper length in mm is
+
+### Visual editor
+
+Click on the compass on the upper right. Take a look at the editor options...it looks more like a GUI like Word, but it maintains the source document. This makes it really easy to format your text, or add in items like links, images, math, and citations.
+
+### Knit!
+
+Time to turn our document into an HTML file. Click on *Knit...Knit to HTML* at the top of the editor pane.
+
+### Integrate Comments from your Colleagues 
+
+Your colleagues have suggested you should make your plot about bill depth, and not bill length. Go back up to the `r plot` code chunk and update `bill_length_mm` to be `bill_depth_mm` and re-run the code chunk.
+
+Knit the R Markdown document again: Click on *Knit...Knit to HTML* at the top of the editor pane.
+
+This is so much better than copying and pasting! There aren't going to be manual errors (you ran the code again, but forgot to copy and paste it in; you pasted in the wrong graph).  You don't have to hunt around for your scripts because much of the analysis code is already in this document.  (And you remembered to use a good project structure, right?!)  If you added more observations of penguins data to `penguins.csv` your tables, graphs, and inline code would all update automatically. 
+
+You could hand your entire project (with good directory structure, RStudio Project files, data files, R Markdown, etc.) to colleagues and they would almost certainly be able to make sense of the files and could make changes to the R Markdown file themselves, too.
+
+[Head back to the main website for where you can learn more, or keep going with Citations.]
+
+### Bonus: Citations
+
+Insert a citation. You have a `references.bib` file in the `analysis` folder. It is an extremely simple file that contains only one citation for the penguins data package we used. Let's put in a citation after this sentence:
+
+- All data are from the **palmerspenguins** package
+
+Also note that the Visual Editor Citation feature connects with Zotero. If you aren't using Zotero, you should! Check out UVA Library's next [Zotero workshop](https://cal.lib.virginia.edu/event/7525510) on March 17, 2021.
+
+The full citation automatically shows up at the end of the document.
+
+Oops...the default citation style in R Markdown is Chicago, but you want APA. You can use Citation Style Language (.csl) files to change how R Markdown cites your sources. You can find more .csl files at the [Zotero Style Repository](https://www.zotero.org/styles).
+
+In the header, at the top of this R Markdown document, add this line:
+
+`csl: apa.csl`
+
+(Note that you have the `apa.csl` file in the `analysis` folder.)
+
+Knit again to see the changes.
+
+### References

@@ -1,0 +1,173 @@
+{
+    "sources": [
+        {
+            "abstract": "TL;DR: Why should I use here? The here package bottles up several small best practices for referencing files in your project. You could manufacture most of these yourself using a combination of RStudio projects and clever file paths, but the here package is useful because it streamlines these practices without you needing to think about it. The main benefits: here works from the project up. That makes it easy to reference other sub-folders in your directory.",
+            "author": [
+                {
+                    "family": "Barrett",
+                    "given": "Malcolm"
+                }
+            ],
+            "container-title": "Malcolm Barrett",
+            "id": "barrett2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        11
+                    ]
+                ]
+            },
+            "publisher": "https://malco.io/2018/11/05/why-should-i-use-the-here-package-when-i-m-already-using-projects/",
+            "title": "Why should I use the here package when I’m already using projects?",
+            "type": ""
+        },
+        {
+            "abstract": "The stuff you need to know about R, besides statistical analysis.",
+            "author": [
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                },
+                {
+                    "family": "Hester",
+                    "given": "Jim"
+                }
+            ],
+            "container-title": "What They Forgot to Teach You About R",
+            "id": "bryan",
+            "title": "Chapter 2: Project-oriented workflow",
+            "title-short": "What They Forgot to Teach You About R",
+            "type": "chapter"
+        },
+        {
+            "abstract": "The stuff you need to know about R, besides statistical analysis.",
+            "author": [
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                },
+                {
+                    "family": "Hester",
+                    "given": "Jim"
+                }
+            ],
+            "container-title": "What They Forgot to Teach You About R",
+            "id": "bryana",
+            "title": "Chapter 3: Practice safe paths",
+            "title-short": "Chapter 3",
+            "type": "chapter"
+        },
+        {
+            "abstract": "The first official book authored by the core R Markdown developers that provides a comprehensive and accurate reference to the R Markdown ecosystem. With R Markdown, you can easily create reproducible data analysis reports, presentations, dashboards, interactive applications, books, dissertations, websites, and journal articles, while enjoying the simplicity of Markdown and the great power of R and other languages.",
+            "author": [
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett",
+                    "suffix": "J. J. Allaire"
+                }
+            ],
+            "id": "grolemund",
+            "title": "R Markdown: The Definitive Guide",
+            "title-short": "R Markdown",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                },
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                }
+            ],
+            "id": "muller",
+            "publisher": "https://cran.r-project.org/web/packages/here/vignettes/here.html",
+            "title": "Here vignette",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                },
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
+                }
+            ],
+            "id": "mullera",
+            "publisher": "https://cran.r-project.org/web/packages/here/vignettes/rmarkdown.html",
+            "title": "Using here with rmarkdown vignette",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Richmond",
+                    "given": "Jenny"
+                }
+            ],
+            "id": "richmond",
+            "publisher": "http://jenrichmond.rbind.io/post/how-to-use-the-here-package/",
+            "title": "How to use the ‘here‘ package",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "literal": "RStudio"
+                }
+            ],
+            "id": "rstudio",
+            "publisher": "https://rmarkdown.rstudio.com/lesson-1.html",
+            "title": "R Markdown: Introduction",
+            "title-short": "R Markdown",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "RStudio"
+                }
+            ],
+            "id": "rstudioa",
+            "publisher": "https://rstudio.github.io/visual-markdown-editing/#/",
+            "title": "Visual R Markdown",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "literal": "RStudio"
+                }
+            ],
+            "id": "rstudiob",
+            "publisher": "https://rstudio.github.io/visual-markdown-editing/#/citations",
+            "title": "Visual R Markdown: Citations",
+            "title-short": "Visual R Markdown",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "container-title": "R for Data Science",
+            "id": "wickham",
+            "title": "8 Workflow: projects",
+            "title-short": "8 Workflow",
+            "type": "chapter"
+        }
+    ],
+    "project_biblios": []
+}

@@ -1,0 +1,5 @@
+"0","```r
+URL <- \"https://github.com/uvastatlab/phdplus2021/raw/main/data/homes.rds\"
+homes <- readRDS(url(URL))
+
+```"
