@@ -30,7 +30,7 @@ You need the most current version of R, RStudio (v. 1.4 minimum to follow along 
 
 This part doubles as instructor notes, or notes to follow along outside of the workshop. 
 
-The Penguins project is the demo part of the "Reproducible Analysis and Documentation with R and RStudio" workshop.  Those workshop files are online. Start there, and follow the instructions under "Your Turn" (the worms project).
+The Penguins project is the demo part of the ["Reproducible Analysis and Documentation with R and RStudio" workshop](https://jennhuck.github.io/workshops/repro_analysis_R_RStudio.html).  Start there, and follow the instructions under "Your Turn" (the worms project).
 
 Penguins project directory:
 
@@ -42,17 +42,17 @@ Penguins project directory:
 
 |   +-- report-fail.Rmd
 
-|   \-- report-success.Rmd
+|   \\-- report-success.Rmd
 
 +-- data
 
 +-- prepare
 
-|   \-- penguins.R
+|   \\-- penguins.R
 
 +-- penguins.Rproj
 
-\-- README.md
+\\-- README.md
 
 
 The `data` folder is empty to start.  
