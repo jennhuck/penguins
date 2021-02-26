@@ -11,8 +11,11 @@ Workshop presentation: 2021-03-01
 ## Author name and contact info
 
 Jennifer Huck
+
 Data Librarian
+
 UVA Library
+
 jhuck@virginia.edu
 
 ## Origin of data
@@ -32,15 +35,25 @@ The Penguins project is the demo part of the "Reproducible Analysis and Document
 Penguins project directory:
 
 +-- analysis
+
 |   +-- apa.csl
+
 |   +-- references.bib
+
 |   +-- report-fail.Rmd
+
 |   \-- report-success.Rmd
+
 +-- data
+
 +-- prepare
+
 |   \-- penguins.R
+
 +-- penguins.Rproj
+
 \-- README.md
+
 
 The `data` folder is empty to start.  
 
