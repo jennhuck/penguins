@@ -93,7 +93,7 @@ Run example of creating R code chunks, around line 39.
 
 ### Simple Markdown and Inline code 
 
-After "The mean penguin flipper length in mm is" type: \`r mean(penguins_success$flipper_length_mm, na.rm = TRUE)`.  (Start the inline code with a backtick: `)  It is easier to type the mean() part in the console first, then copy and paste to the R Markdown document. 
+After "The mean penguin flipper length in mm is" type: \`r mean(penguins_success$flipper_length_mm, na.rm = TRUE)\`.  (Start and end the inline code with a backtick; if you can see the backslashes, ignore those - do not use them in your inline code.)  It is easier to type the mean() part in the console first, then copy and paste to the R Markdown document. 
 
 Note that you can't "run" inline code.
 
