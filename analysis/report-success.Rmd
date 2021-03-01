@@ -53,7 +53,7 @@ Time to turn our document into an HTML file. Click on *Knit...Knit to HTML* at t
 
 ### Integrate Comments from your Colleagues 
 
-Your colleagues have suggested you should make your plot about bill depth, and not bill length. Go back up to the `r plot` code chunk and update `bill_length_mm` to be `bill_depth_mm` and re-run the code chunk.
+Your colleagues have suggested you should make your plot about bill depth, and not bill length. Go back up to the *r plot* code chunk and update `bill_length_mm` to be `bill_depth_mm` and re-run the code chunk.
 
 Knit the R Markdown document again: Click on *Knit...Knit to HTML* at the top of the editor pane.
 
