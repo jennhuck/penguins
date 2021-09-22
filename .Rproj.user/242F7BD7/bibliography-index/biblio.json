@@ -1,172 +1,212 @@
 {
     "sources": [
         {
-            "abstract": "TL;DR: Why should I use here? The here package bottles up several small best practices for referencing files in your project. You could manufacture most of these yourself using a combination of RStudio projects and clever file paths, but the here package is useful because it streamlines these practices without you needing to think about it. The main benefits: here works from the project up. That makes it easy to reference other sub-folders in your directory.",
-            "author": [
-                {
-                    "family": "Barrett",
-                    "given": "Malcolm"
-                }
-            ],
-            "container-title": "Malcolm Barrett",
-            "id": "barrett2018",
-            "issued": {
-                "date-parts": [
-                    [
-                        2018,
-                        11
-                    ]
-                ]
-            },
-            "publisher": "https://malco.io/2018/11/05/why-should-i-use-the-here-package-when-i-m-already-using-projects/",
-            "title": "Why should I use the here package when I’m already using projects?",
+            "genre": "Misc",
+            "id": "albemarle",
             "type": ""
         },
         {
-            "abstract": "The stuff you need to know about R, besides statistical analysis.",
+            "ISBN": "978-1-351-10817-1",
             "author": [
                 {
-                    "family": "Bryan",
-                    "given": "Jennifer"
+                    "family": "Xie",
+                    "given": "Yihui"
                 },
                 {
-                    "family": "Hester",
-                    "given": "Jim"
-                }
-            ],
-            "container-title": "What They Forgot to Teach You About R",
-            "id": "bryan",
-            "title": "Chapter 2: Project-oriented workflow",
-            "title-short": "What They Forgot to Teach You About R",
-            "type": "chapter"
-        },
-        {
-            "abstract": "The stuff you need to know about R, besides statistical analysis.",
-            "author": [
-                {
-                    "family": "Bryan",
-                    "given": "Jennifer"
+                    "family": "Hill",
+                    "given": "Alison Presmanes"
                 },
                 {
-                    "family": "Hester",
-                    "given": "Jim"
+                    "family": "Thomas",
+                    "given": "Amber"
                 }
             ],
-            "container-title": "What They Forgot to Teach You About R",
-            "id": "bryana",
-            "title": "Chapter 3: Practice safe paths",
-            "title-short": "Chapter 3",
-            "type": "chapter"
+            "id": "blogdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "title": "Blogdown: Creating websites with R Markdown",
+            "title-short": "Blogdown",
+            "type": "book"
         },
         {
-            "abstract": "The first official book authored by the core R Markdown developers that provides a comprehensive and accurate reference to the R Markdown ecosystem. With R Markdown, you can easily create reproducible data analysis reports, presentations, dashboards, interactive applications, books, dissertations, websites, and journal articles, while enjoying the simplicity of Markdown and the great power of R and other languages.",
+            "ISBN": "978-1-138-70010-9",
             "author": [
                 {
-                    "family": "Grolemund",
-                    "given": "Garrett",
-                    "suffix": "J. J. Allaire"
+                    "family": "Xie",
+                    "given": "Yihui"
                 }
             ],
-            "id": "grolemund",
-            "title": "R Markdown: The Definitive Guide",
-            "title-short": "R Markdown",
+            "id": "bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "keyword": "Bookdown,Computer programs,Desktop publishing,Technical writing",
+            "publisher": "CRC Press",
+            "publisher-place": "Boca Raton, FL",
+            "title": "Bookdown: Authoring books and technical publications with R Markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-3-319-24277-4",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "ggplot2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag New York",
+            "title": "Ggplot2: Elegant graphics for data analysis",
+            "title-short": "Ggplot2",
+            "type": "book"
+        },
+        {
+            "DOI": "10.5281/zenodo.3960218",
+            "author": [
+                {
+                    "family": "Horst",
+                    "given": "Allison Marie"
+                },
+                {
+                    "family": "Hill",
+                    "given": "Alison Presmanes"
+                },
+                {
+                    "family": "Gorman",
+                    "given": "Kristen B"
+                }
+            ],
+            "id": "horst2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "title": "Palmerpenguins: Palmer archipelago (antarctica) penguin data",
+            "title-short": "Palmerpenguins",
+            "type": ""
+        },
+        {
+            "ISBN": "978-1-138-33145-7",
+            "author": [
+                {
+                    "family": "Sievert",
+                    "given": "Carson"
+                }
+            ],
+            "id": "plotly",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Chapman and Hall/CRC",
+            "title": "Interactive web-based data visualization with r, plotly, and shiny",
             "type": "book"
         },
         {
             "author": [
                 {
-                    "family": "Müller",
-                    "given": "Kirill"
+                    "literal": "R Core Team"
+                }
+            ],
+            "genre": "Manual",
+            "id": "rcore",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-0-429-78296-1",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
                 },
                 {
-                    "family": "Bryan",
-                    "given": "Jennifer"
-                }
-            ],
-            "id": "muller",
-            "publisher": "https://cran.r-project.org/web/packages/here/vignettes/here.html",
-            "title": "Here vignette",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "family": "Müller",
-                    "given": "Kirill"
-                },
-                {
-                    "family": "Bryan",
-                    "given": "Jennifer"
-                }
-            ],
-            "id": "mullera",
-            "publisher": "https://cran.r-project.org/web/packages/here/vignettes/rmarkdown.html",
-            "title": "Using here with rmarkdown vignette",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "family": "Richmond",
-                    "given": "Jenny"
-                }
-            ],
-            "id": "richmond",
-            "publisher": "http://jenrichmond.rbind.io/post/how-to-use-the-here-package/",
-            "title": "How to use the ‘here‘ package",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "literal": "RStudio"
-                }
-            ],
-            "id": "rstudio",
-            "publisher": "https://rmarkdown.rstudio.com/lesson-1.html",
-            "title": "R Markdown: Introduction",
-            "title-short": "R Markdown",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "family": "RStudio"
-                }
-            ],
-            "id": "rstudioa",
-            "publisher": "https://rstudio.github.io/visual-markdown-editing/#/",
-            "title": "Visual R Markdown",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "literal": "RStudio"
-                }
-            ],
-            "id": "rstudiob",
-            "publisher": "https://rstudio.github.io/visual-markdown-editing/#/citations",
-            "title": "Visual R Markdown: Citations",
-            "title-short": "Visual R Markdown",
-            "type": ""
-        },
-        {
-            "author": [
-                {
-                    "family": "Wickham",
-                    "given": "Hadley"
+                    "family": "Allaire",
+                    "given": "J. J."
                 },
                 {
                     "family": "Grolemund",
                     "given": "Garrett"
                 }
             ],
-            "container-title": "R for Data Science",
-            "id": "wickham",
-            "title": "8 Workflow: projects",
-            "title-short": "8 Workflow",
-            "type": "chapter"
+            "id": "rmd",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "CRC Press, Taylor and Francis Group",
+            "publisher-place": "Boca Raton",
+            "title": "R Markdown: The definitive guide",
+            "title-short": "R Markdown",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-0-367-56383-7 978-0-367-56382-0",
+            "abstract": "\"This new book written by the developers of R Markdown is an essential reference that will help users learn and make full use of the software. Those new to R Markdown will appreciate the short, practical examples that address the most common issues users encounter. Frequent users will also benefit from the wide ranging tips and tricks that expose ’hidden’ features, support customization and demonstrate the many new and varied applications of the software. After reading this book users will learn how to: Enhance your R Markdown content with diagrams, citations, and dynamically generated text Streamline your workflow with child documents, code chunk references, and caching Control the formatting and layout with Pandoc markdown syntax or by writing custom HTML and LaTeX templates Utilize chunk options and hooks to fine-tune how your code is processed Switch between different language engineers to seamlessly incorporate python, D3, and more into your analysis\"",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "Riederer",
+                    "given": "Emily"
+                }
+            ],
+            "collection-title": "The R Series",
+            "edition": "First",
+            "id": "rmd_cookbook",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Taylor and Francis, CRC Press",
+            "publisher-place": "Boca Raton",
+            "title": "R markdown cookbook",
+            "type": "book"
         }
     ],
     "project_biblios": []

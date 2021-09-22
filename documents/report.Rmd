@@ -1,5 +1,5 @@
 ---
-title: "Palmer penguins project"
+title: "Reporting and Presenting Data using R Markdown"
 output: html_document
 bibliography: references.bib
 ---
@@ -8,85 +8,280 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Reading in data
-Let's load our data:
-```{r setup-success}
-penguins_success <- readr::read_csv("../data/penguins.csv")
+## R Markdown: what is it and why use it?
+
+Markdown is a simple plain-text formatting syntax created in 2004. For example, surrounding words with asterisks creates italics:
+
+`*Hello*` is rendered as *Hello*.
+
+We'll talk about how it gets rendered in a moment.
+
+Go to "Help...Markdown Quick Reference" in RStudio to see more Markdown syntax.
+
+**R** Markdown is a version of Markdown that allows R code [@rcore] to be included as "chunks". This allows us to combine narration and exposition along with R code and its output in one file. This is easier and less error-prone than, say, using MS Word to write up results and copy-and-pasting results out of R into Word.
+
+Most everything I know about R Markdown is courtesy of the free online book, [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [@rmd]. Thanks to Clay Ford for letting my adapt his lesson on R Markdown for this one!
+
+> "Wealth consists not in having great possessions, but in having few wants."
+
+In other words, it was designed to satisfy those who simply want to write and not be saddled with typesetting work (eg, LaTeX)[^1]. Rest assured, R Markdown can accommodate complex output requirements. But the primary motivation of R Markdown is to allow you to succeed with simplicity.
+
+[^1]: [The \#1 Reason Why I Don't Want to Work in Academia: Formatting Papers Is A Huge Waste of Time](https://yihui.org/en/2017/12/formatting-papers/)
+
+### Starting an R Markdown document
+
+1.  In RStudio, "File...New File...R Markdown..."
+2.  Use the wizard that opens to select Document or Presentation and the desired output format (HTML, PDF, Word, etc).
+3.  Click OK to create a template to get you started.
+
+As with a document, when you start a new R Markdown presentation you get a template with some basic instructions.
+
+One major difference between documents and presentations is that `##` indicates a *new slide*.
+
+Today's session will involve learning R Markdown in the context of a HTML document, but most everything we learn will translate to presentations.
+
+See [Chapter 4](https://bookdown.org/yihui/rmarkdown/presentations.html) of the R Markdown book [-@rmd] for details on presentations.
+
+### An R Markdown workflow
+
+Once you start and save an R Markdown file, or Rmd file, you're probably going to erase the template and start typing your own content. Here's a suggested workflow:
+
+1.  Open up the Markdown Quick Reference (Help...Markdown Quick Reference) so it's handy
+
+2.  Start writing and coding
+
+3.  Click **Knit** to get a preview, or use keyboard shortcuts:
+
+    -   Ctrl + Shift + K (Win/Linux)
+    -   Cmd + Shift + K (Mac)
+
+4.  Repeat steps 2 and 3 as needed.
+
+## Building our R Markdown document
+
+### Reading in data
+
+Let's load our data. We are using the Palmer Penguins data [@horst2020]. This is our first code chunk.
+
+```{r load-data}
+penguins <- readr::read_csv("../data/penguins.csv")
 ```
 
-Note that you have to go up a level ("..") to make it work.  This doesn't work:
-```{r setup-fail}
-penguins_fail <- readr::read_csv("data/penguins.csv")
-```
+Note that you have to go up a level ("..") to make it work. This doesn't work:
 
-The above chunk does not work as expected.  When *report-fail.Rmd* is rendered, the working directory is internally set to <project root>/analysis by R Markdown.  The `analysis` folder is a sub-directory of `penguins`.  So even though our working directory is set to `penguins`, R Markdown is internally set to a different subdirectory, `analysis`.  A relative path that will work in the console doesn't work in the .Rmd file. 
+`penguins_fail <- readr::read_csv("data/penguins.csv")`
+
+The above line does not work as expected. R Markdown files internally set its working directory to wherever the .Rmd files is stored. Here that is `penguins/documents`. The `documents` folder is a sub-directory of `penguins`. So even though our working directory is set to `penguins`, R Markdown is internally set to a different subdirectory, `documents`. A relative path that will work in the console doesn't work in the .Rmd file.
 
 Copy and paste line 19 into the Console...it works there.
 
-Now copy and paste line 14 into the Console and see if it works.  It doesn't!
+Now copy and paste line 14 into the Console and see if it works. It doesn't!
 
-If this is going to be annoying to you, you might want to check out the `here` package.
+If this is going to be annoying to you, you might want to check out the `here` package. It can help
 
-## R Markdown
+### What is a code chunk?
 
-### Code chunks
+To add R code to a R Markdown file it must be in a "chunk". There is a keyboard shortcut for inserting a chunk:
+
+-   Ctrl + Alt + I (Win/Linux)
+-   Cmd + Option + I (Mac)
+
+Try it here:
+
+You can see the backticks, r in curly braces, and buttons on the right.
 
 Here is an example of a code chunk. Press *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button to run.
 
 ```{r}
-lm(flipper_length_mm ~ body_mass_g + species, penguins_success)
+lm(flipper_length_mm ~ body_mass_g + species, penguins)
 ```
 
-You can insert plots. Press *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button to run.
+Here is a plot:
 
 ```{r plot}
-ggplot2::ggplot(penguins_success) + ggplot2::aes(x = body_mass_g, y = bill_length_mm) + ggplot2::geom_point()
+ggplot2::ggplot(penguins) + ggplot2::aes(x = body_mass_g, y = bill_length_mm) + ggplot2::geom_point()
 ```
 
-Create a code chunk below with *CTRL + ALT + I* (Windows/Linux) or *CMD + ALT + I (Mac)*, or click on the green box with a C and plus-sign, then click R. Type **summary(penguins_success)** in between the pairs of three backticks. Then run with *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button.
+### Your turn
+
+Create a code chunk below with *CTRL + ALT + I* (Windows/Linux) or *CMD + ALT + I (Mac)*, or click on the green box with a C and plus-sign, then click R. Type **summary(penguins)** in between the pairs of three backticks. Then run with *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button.
 
 ### Inline code
 
-The mean penguin flipper length in mm is
+You can also add inline code:
 
-### Visual editor
+The mean penguin flipper length in mm is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`
 
-Click on the compass on the upper right. Take a look at the editor options...it looks more like a GUI like Word, but it maintains the source document. This makes it really easy to format your text, or add in items like links, images, math, and citations.
+This is especially useful when pulling specific values from an analysis, or you think the data may change over time.
 
-### Knit!
+This report was written using R version `r getRversion()`.
+
+## Knit!
 
 Time to turn our document into an HTML file. Click on *Knit...Knit to HTML* at the top of the editor pane.
 
-### Integrate Comments from your Colleagues 
+### What happens when we knit
+
+When we "Knit" a document, the following happens:
+
+-   the `knit` function from the {knitr} package executes the R code embedded in Markdown -- **in a new R session** -- and converts R Markdown (.Rmd) to Markdown (.md)
+-   the `render` function from the {rmarkdown} package converts the Markdown to the output you specified (HTML, PDF, etc) using a program called pandoc.
+
+This all happens under the hood so we don't really need to worry about it. But we do need to be aware of the bold part: **in a new R session**
+
+Rendering an Rmd document **in a new R session** means that none of the objects in your current R session are available. Like so...
+
+### Your turn
+
+1.  In your R console, at the prompt, input the following and hit Enter: `x <- 2021`
+2.  Add a code chunk here. Enter `x` in the code chunk:
+```{r}
+x
+```
+
+3.  Knit the document and notice the error. That occurs because the Rmd file was rendered in a new session in which `x` did not exist.
+4.  Delete the code chunk.
+
+### Integrate comments from your colleagues
 
 Your colleagues have suggested you should make your plot about bill depth, and not bill length. Go back up to the *r plot* code chunk and update `bill_length_mm` to be `bill_depth_mm` and re-run the code chunk.
 
 Knit the R Markdown document again: Click on *Knit...Knit to HTML* at the top of the editor pane.
 
-This is so much better than copying and pasting! There aren't going to be manual errors (you ran the code again, but forgot to copy and paste it in; you pasted in the wrong graph).  You don't have to hunt around for your scripts because much of the analysis code is already in this document.  (And you remembered to use a good project structure, right?!)  If you added more observations of penguins data to `penguins.csv` your tables, graphs, and inline code would all update automatically. 
+This is so much better than copying and pasting! There aren't going to be manual errors (you ran the code again, but forgot to copy and paste it in; you pasted in the wrong graph). You don't have to hunt around for your scripts because much of the analysis code is already in this document. (And you remembered to use a good project structure, right?!) If you added more observations of penguins data to `penguins.csv` your tables, graphs, and inline code would all update automatically.
 
 You could hand your entire project (with good directory structure, RStudio Project files, data files, R Markdown, etc.) to colleagues and they would almost certainly be able to make sense of the files and could make changes to the R Markdown file themselves, too.
 
-[Head back to the main website for where you can learn more, or keep going with Citations.]
+## Visual editor
 
-### Bonus: Citations
+Click on the compass on the upper right. Take a look at the editor options...it looks more like a WYSIWYG editor like Word, but it maintains the source document. This makes it really easy to format your text, or add in items like links, images, math, and citations.
 
-Insert a citation. You have a `references.bib` file in the `analysis` folder. It is an extremely simple file that contains only one citation for the penguins data package we used. Let's put in a citation after this sentence:
+### Format math equations
 
-- All data are from the **palmerspenguins** package
+Insert: y equals x squared.
 
-Also note that the Visual Editor Citation feature connects with Zotero. If you aren't using Zotero, you should! Check out UVA Library's next [Zotero workshop](https://cal.lib.virginia.edu/event/7525510) on March 17, 2021.
+### Citations
+
+Insert a citation. You have a `references.bib` file in the `documents` folder. It is an extremely simple file that contains only one citation for the penguins data package we used. Let's put in a citation after this sentence:
+
+-   All data are from the **palmerspenguins** package
+
+For the citations to work, the R Markdown file needs to know where to look for the citations. We specify this by adding `bibliography: file.bib` to the header. This will assume the bib file is in the same directory as the Rmd file.
+
+Also note that the Visual Editor Citation feature connects with Zotero. If you aren't using Zotero, you should! Check out UVA Library's next [Zotero workshop](https://cal.lib.virginia.edu/event/7525510) on October 6, 2021.
 
 The full citation automatically shows up at the end of the document.
 
-Oops...the default citation style in R Markdown is Chicago, but you want APA. You can use Citation Style Language (.csl) files to change how R Markdown cites your sources. You can find more .csl files at the [Zotero Style Repository](https://www.zotero.org/styles).
+The default citation style in R Markdown is Chicago, but let's say you want APA. You can use Citation Style Language (.csl) files to change how R Markdown cites your sources. You can find more .csl files at the [Zotero Style Repository](https://www.zotero.org/styles).
 
 In the header, at the top of this R Markdown document, add this line:
 
 `csl: apa.csl`
 
-(Note that you have the `apa.csl` file in the `analysis` folder.)
+(Note that you have the `apa.csl` file in the `documents` folder.)
 
 Knit again to see the changes.
 
-### References
+## Good to know
+
+### Chunk options
+
+We have a lot control of chunks via chunk options, which can be provided inside the curly braces. For example, hide the code that produces a plot, and set the plot dimensions to 5in x 5in:
+
+```` ```{r echo = FALSE, fig.width = 5, fig.height = 5} ````
+
+Hitting Tab after the "r" in the curly braces will produce a menu of available options. Notice options must be separated with a comma.
+
+Good to know options:
+
+-   `eval`: TRUE or FALSE, whether to evaluate code or not. Good for showing R code but not actually running it
+-   `echo`: TRUE or FALSE, whether to show R code along with output. FALSE will show output but not the R code that produced the output.
+-   `message`: TRUE or FALSE, whether to show messages. FALSE will suppress start-up messages that say things like "Attaching package: 'dplyr'" or "Please cite this package...".
+-   `include`: TRUE or FALSE, whether to include anything from a code chunk in the output document. FALSE will evaluate the code but not show the code or the results. Useful for running code that doesn't need to be seen such as loading packages or data.
+-   `warning`: TRUE or FALSE, whether to display warnings messages. FALSE will suppress warnings like a package being built under a previous version of R, or a deprecated function.
+-   `fig.width`, `fig.height`: Absolute width and height of the plot in inches. Defaults are 7.
+-   `out.width`, `out.height`: Scaled width and height of the plot in the output document. Expressed as percentage (eg, "50%")
+
+To globally set an option for all chunks, add it to the `opts_chunk$set` at the top of the Rmd file. For example, set all chunks to show code and suppress any messages:
+
+`knitr::opts_chunk$set(echo = TRUE, message = FALSE)`
+
+You can also label code chunks. For example, here's a chunk labeled "plot-1":
+
+```` ```{r plot-1, echo = FALSE, fig.width = 5, fig.height = 5} ````
+
+Code chunk labels must be unique. I tend not to label chunks until I need to.
+
+A list of available options: <https://yihui.org/knitr/options/#chunk-options>
+
+See also [Section 2.6](https://bookdown.org/yihui/rmarkdown/r-code.html) of the R Markdown book [-@rmd].
+
+### Set output options and sub-options
+
+Render options are set in the Rmd header. The default header for an HTML document is as follows:
+
+    title: "Untitled"
+    author: "Your Name"
+    date: "Today's date"
+    output: html_document
+
+Changing "html_document" to "pdf_document" results in a PDF file being rendered when knitting (assuming you have LaTeX installed). The RStudio wizard you use when starting a Rmd file populates this for you, but you can manually edit.
+
+The output options have *sub-options*. Sub-options allow you to do things like automatically number sections and add a table of contents. Here is an example that adds a table of contents that floats to the left of your document. Note the formatting.
+
+    title: "Untitled"
+    author: "Your Name"
+    date: "Today's date"
+    output: 
+      html_document:      # indent two spaces
+        toc: true         # indent four spaces
+        toc_float: true   # indent four spaces
+
+To automatically number sections (ie, headers produced using `#` signs), set `number_sections: true`
+
+To allow R code to be hidden/revealed, set `code_folding: hide`.
+
+The `theme` sub-option specifies the theme to use for the page, which changes the appearance and style of your page. Valid themes include:
+
+-   default
+-   cerulean
+-   journal
+-   flatly
+-   darkly
+-   readable
+-   spacelab
+-   united
+-   cosmo
+-   lumen
+-   paper
+-   sandstone
+-   simplex
+-   yeti
+-   null (for no theme)
+
+The `highlight` sub-option specifies the syntax highlighting style. Supported styles include:
+
+-   default
+-   tango
+-   pygments
+-   kate
+-   monochrome
+-   espresso
+-   zenburn
+-   haddock
+-   breezedark
+-   textmate
+-   null (to prevent syntax highlighting)
+
+We can update our document to the `readable` theme and `textmate` highlighting.
+
+    title: "Reporting and Presenting Data using R Markdown"
+    author: "Jenn Huck"
+    date: "Sept 28, 2021"
+    output: 
+      html_document:
+        theme: readable
+        highlight: textmate
+    bibliography: references.bib
+
+## References

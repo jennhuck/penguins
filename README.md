@@ -26,6 +26,8 @@ We rely on the palmerspenguins package for our demo data. Learn more about the p
 
 You need the most current version of R and RStudio (RStudio v. 1.4 minimum to follow along with Visual Editor section of the workshop).
 
+If you have never worked with R Markdown before, a dialog will pop up titled "Install Required Packages" that will ask if you want to install the required packages, which includes rmarkdown and knitr. Click Yes.
+
 ## Project goals and description 
 
 This part doubles as instructor notes, or notes to follow along outside of the workshop. 
@@ -96,3 +98,8 @@ Follow the instructions in those sections.
 ### Bonus: Citations
 
 Follow the instructions in those sections.  The `documents/apa.csl` and `documents/reference.bib` files are necessary for this section. 
+
+### Cheat Sheets
+
+-   RStudio. [R Markdown: Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown.pdf).
+-   RStudio. [R Markdown: Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
