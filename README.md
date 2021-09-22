@@ -34,21 +34,19 @@ The Penguins project is the demo part of the ["Reproducible Analysis and Documen
 
 Penguins project directory:
 
-+-- analysis
++-- data
+
++-- documents
 
 |   +-- apa.csl
 
 |   +-- references.bib
 
-|   +-- report-fail.Rmd
+|   \\-- report.Rmd
 
-|   \\-- report-success.Rmd
++-- scripts
 
-+-- data
-
-+-- prepare
-
-|   \\-- penguins.R
+|   \\-- 01-penguins.R
 
 +-- penguins.Rproj
 
@@ -57,39 +55,29 @@ Penguins project directory:
 
 The `data` folder is empty to start.  
 
-### Run prepare/penguins.R
+### Run scripts/01-penguins.R
 
-Open `prepare/penguins.R`.  This file demos the here package, and saves penguin data to local csv files.  See comments for how to use that package.   
+Open `scripts/01-penguins.R`.  This file saves penguin data to local csv files. 
 
-Run the script in its entirety to create 2 csv files: `data/penguins.csv` and `data/penguins2.csv`.  Verify that you have the files in the `data` directory. 
+Run the script to create a csv file: `data/penguins.csv`.  Verify that you have the file in the `data` directory. 
 
-### Run R Markdown that fails without here
+### Run R Markdown
 
-Open `analysis/report-fail.Rmd`.  Before we look at the here package, take a moment to discuss R Markdown.  We have:
+Open `documents/report.Rmd`.  Let's take a moment to discuss R Markdown.  We have:
 
 - a header with rendering options
 - R code chunks
 - narrative text mixed with simple Markdown formatting
 
-This is a very simple example of an R Markdown file, with a very simple header, and only the one R code chunk.  Notice the simple Markdown formatting, with hashtags, asterisks, and backticks used for lightweight formatting. 
+This is a simple example of an R Markdown file with a very simple header.  Notice the simple Markdown formatting, with hashtags, asterisks, and backticks used for lightweight formatting. 
 
 You can open a new R Markdown document by going to File...New File...R Markdown
 
-Notice the file path used to read in the data in the first code chunk.  It doesn't work.  R Markdown sets its own internal directory to wherever the R Markdown file is saved. 
-
-Copy and paste line 9 into the console...it works.
-
-Can show that it will run if you add two dots and a forward-slash `../` before the path.
-
-### Run R Markdown that succeeds with here
-
-Open `analysis/report-success.Rmd`.  Notice that the first code chunk works with the here package.  
-
-Copy and paste line 12 into the console...it still works. 
+Notice the file path used to read in the data in the at the top of the document. R Markdown sets its own internal directory to wherever the R Markdown file is saved.  
 
 ### Move on to other features of R Markdown. 
 
-Run example of creating R code chunks, around line 39.
+Run examples of code chunks.
 
 ### Simple Markdown and Inline code 
 
@@ -107,4 +95,4 @@ Follow the instructions in those sections.
 
 ### Bonus: Citations
 
-Follow the instructions in those sections.  The `analysis/apa.csl` and `analysis/reference.bib` files are necessary for this section. 
+Follow the instructions in those sections.  The `documents/apa.csl` and `documents/reference.bib` files are necessary for this section. 

@@ -1,25 +1,31 @@
 ---
-title: "Palmer penguins - SUCCESS"
+title: "Palmer penguins project"
 output: html_document
 bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-here::i_am("analysis/report-success.Rmd")
-library(here)
-
 knitr::opts_chunk$set(echo = TRUE)
-
-penguins_success <- readr::read_csv(here("data/penguins.csv"))
 ```
 
-## Success!
+## Reading in data
+Let's load our data:
+```{r setup-success}
+penguins_success <- readr::read_csv("../data/penguins.csv")
+```
 
-This time our chunk worked.
+Note that you have to go up a level ("..") to make it work.  This doesn't work:
+```{r setup-fail}
+penguins_fail <- readr::read_csv("data/penguins.csv")
+```
 
-Now copy and paste line 12 into the Console and see if it works.
+The above chunk does not work as expected.  When *report-fail.Rmd* is rendered, the working directory is internally set to <project root>/analysis by R Markdown.  The `analysis` folder is a sub-directory of `penguins`.  So even though our working directory is set to `penguins`, R Markdown is internally set to a different subdirectory, `analysis`.  A relative path that will work in the console doesn't work in the .Rmd file. 
 
-Success again!
+Copy and paste line 19 into the Console...it works there.
+
+Now copy and paste line 14 into the Console and see if it works.  It doesn't!
+
+If this is going to be annoying to you, you might want to check out the `here` package.
 
 ## R Markdown
 
