@@ -1,12 +1,12 @@
 ## Project name
 
-The Penguins project is a demo project used for understanding RStudio Projects, R Markdown, and the here package. 
+The Penguins project is a demo project used for understanding RStudio Projects, general project organization, and R Markdown. 
 
 ## Useful dates 
 
-Last updated: 2021-02-25
+Last updated: 2021-09-22
 
-Workshop presentation: 2021-03-01
+Workshop presentation: 2021-09-28
 
 ## Author name and contact info
 
@@ -24,7 +24,7 @@ We rely on the palmerspenguins package for our demo data. Learn more about the p
 
 ## Dependencies / How to Install
 
-You need the most current version of R, RStudio (v. 1.4 minimum to follow along with visual editor section ), and the here package. [Installing and updating instructions are here](https://uvastatlab.github.io/phdplus2021/installR). When reviewing the instructions, substitute the `here` package whenever you see the `tidyverse` package.
+You need the most current version of R and RStudio (RStudio v. 1.4 minimum to follow along with Visual Editor section of the workshop).
 
 ## Project goals and description 
 
