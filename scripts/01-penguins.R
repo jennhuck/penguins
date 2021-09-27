@@ -4,4 +4,5 @@
 # Prepare workshop data----
 readr::write_csv(palmerpenguins::penguins, ("data/penguins.csv"))
 
-# Note that this is a basic .R script.
+# Note that this is a basic .R script.  We will look at R Markdown (.Rmd) files
+# next.

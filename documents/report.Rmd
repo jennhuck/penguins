@@ -22,9 +22,11 @@ Go to "Help...Markdown Quick Reference" in RStudio to see more Markdown syntax.
 
 Most everything I know about R Markdown is courtesy of the free online book, [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [@rmd]. Thanks to Clay Ford for letting my adapt his lesson on R Markdown for this one!
 
+R Markdown embodies this philosophy: 
+
 > "Wealth consists not in having great possessions, but in having few wants."
 
-In other words, it was designed to satisfy those who simply want to write and not be saddled with typesetting work (eg, LaTeX)[^1]. Rest assured, R Markdown can accommodate complex output requirements. But the primary motivation of R Markdown is to allow you to succeed with simplicity.
+In other words, R Markdown was designed to satisfy those who simply want to write and not be saddled with typesetting work (eg, LaTeX)[^1]. Rest assured, R Markdown can accommodate complex output requirements. But the primary motivation of R Markdown is to allow you to succeed with simplicity.
 
 [^1]: [The \#1 Reason Why I Don't Want to Work in Academia: Formatting Papers Is A Huge Waste of Time](https://yihui.org/en/2017/12/formatting-papers/)
 
@@ -63,21 +65,21 @@ Once you start and save an R Markdown file, or Rmd file, you're probably going t
 
 Let's load our data. We are using the Palmer Penguins data [@horst2020]. This is our first code chunk.
 
-```{r load-data}
+```{r load-data, echo=FALSE, message=FALSE}
 penguins <- readr::read_csv("../data/penguins.csv")
 ```
 
-Note that you have to go up a level ("..") to make it work. This doesn't work:
+Note that you have to go up a level ("..") to make it work. This doesn't work (copy and paste into a chunk, but then delete after it fails):
 
 `penguins_fail <- readr::read_csv("data/penguins.csv")`
 
 The above line does not work as expected. R Markdown files internally set its working directory to wherever the .Rmd files is stored. Here that is `penguins/documents`. The `documents` folder is a sub-directory of `penguins`. So even though our working directory is set to `penguins`, R Markdown is internally set to a different subdirectory, `documents`. A relative path that will work in the console doesn't work in the .Rmd file.
 
-Copy and paste line 19 into the Console...it works there.
+Copy and paste line 74 (penguins_fail) into the Console...it works there.
 
-Now copy and paste line 14 into the Console and see if it works. It doesn't!
+Now copy and paste line 69 (penguins) into the Console and see if it works. It doesn't!
 
-If this is going to be annoying to you, you might want to check out the `here` package. It can help
+If this is going to be annoying to you, you might want to check out the `here` package. It can help by using allowing you to call your files in a way that will work regardless of where you are calling from.
 
 ### What is a code chunk?
 
@@ -135,9 +137,7 @@ Rendering an Rmd document **in a new R session** means that none of the objects 
 
 1.  In your R console, at the prompt, input the following and hit Enter: `x <- 2021`
 2.  Add a code chunk here. Enter `x` in the code chunk:
-```{r}
-x
-```
+
 
 3.  Knit the document and notice the error. That occurs because the Rmd file was rendered in a new session in which `x` did not exist.
 4.  Delete the code chunk.
