@@ -4,9 +4,9 @@ The Penguins project is a demo project used for understanding RStudio Projects, 
 
 ## Useful dates 
 
-Last updated: 2021-09-22
+Last updated: 2022-10-10
 
-Workshop presentation: 2021-09-28
+Workshop presentation: 2021-10-20
 
 ## Author name and contact info
 
