@@ -22,13 +22,13 @@ Go to "Help...Markdown Quick Reference" in RStudio to see more Markdown syntax.
 
 Most everything I know about R Markdown is courtesy of the free online book, [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [@rmd]. Thanks to Clay Ford for letting my adapt his lesson on R Markdown for this one!
 
-R Markdown embodies this philosophy: 
+R Markdown embodies this philosophy:
 
 > "Wealth consists not in having great possessions, but in having few wants."
 
 In other words, R Markdown was designed to satisfy those who simply want to write and not be saddled with typesetting work (eg, LaTeX)[^1]. Rest assured, R Markdown can accommodate complex output requirements. But the primary motivation of R Markdown is to allow you to succeed with simplicity.
 
-[^1]: [The \#1 Reason Why I Don't Want to Work in Academia: Formatting Papers Is A Huge Waste of Time](https://yihui.org/en/2017/12/formatting-papers/)
+[^1]: [The #1 Reason Why I Don't Want to Work in Academia: Formatting Papers Is A Huge Waste of Time](https://yihui.org/en/2017/12/formatting-papers/)
 
 ### Starting an R Markdown document
 
@@ -69,9 +69,18 @@ Let's load our data. We are using the Palmer Penguins data [@horst2020]. This is
 penguins <- readr::read_csv("../data/penguins.csv")
 ```
 
-Note that you have to go up a level ("..") to make it work. This doesn't work (copy and paste into a chunk, but then delete after it fails):
+Note that you have to go up a level ("..") to make it work. The following code does not work:
 
 `penguins_fail <- readr::read_csv("data/penguins.csv")`
+
+How to create a code chunk:
+
+-   Click on the green C icon, then R, in the upper right corner of the editor
+-   Use the keyboard shortcut: *CTRL + ALT + I* (Windows) or *Command + Option + I* (Mac)
+
+Create a code chunk here, and copy and paste the failing code chunk (do not include the single quotes) from a few lines up. Run the chunk.
+
+
 
 The above line does not work as expected. R Markdown files internally set its working directory to wherever the .Rmd files is stored. Here that is `penguins/documents`. The `documents` folder is a sub-directory of `penguins`. So even though our working directory is set to `penguins`, R Markdown is internally set to a different subdirectory, `documents`. A relative path that will work in the console doesn't work in the .Rmd file.
 
@@ -81,14 +90,9 @@ Now copy and paste line 69 (penguins) into the Console and see if it works. It d
 
 If this is going to be annoying to you, you might want to check out the `here` package. It can help by using allowing you to call your files in a way that will work regardless of where you are calling from.
 
-### What is a code chunk?
+### More about code chunks
 
-To add R code to a R Markdown file it must be in a "chunk". There is a keyboard shortcut for inserting a chunk:
-
--   Ctrl + Alt + I (Win/Linux)
--   Cmd + Option + I (Mac)
-
-Try it here:
+You need to use code chunks to insert code into your R Markdown files.
 
 You can see the backticks, r in curly braces, and buttons on the right.
 
@@ -106,11 +110,11 @@ ggplot2::ggplot(penguins) + ggplot2::aes(x = body_mass_g, y = bill_length_mm) + 
 
 ### Your turn
 
-Create a code chunk below with *CTRL + ALT + I* (Windows/Linux) or *CMD + ALT + I (Mac)*, or click on the green box with a C and plus-sign, then click R. Type **summary(penguins)** in between the pairs of three backticks. Then run with *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button.
+Create a code chunk below with *CTRL + ALT + I* (Windows/Linux) or *CMD + OPTION + I (Mac)*, or click on the green box with a C and plus-sign, then click R. Type **summary(penguins)** in between the pairs of three backticks. Then run with *CTRL + Enter (Windows/Linux)* or *CMD + Return (Mac)*, or click on the green arrow button.
 
 ### Inline code
 
-You can also add inline code:
+You can also add inline code by using a pair of backticks:
 
 The mean penguin flipper length in mm is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`
 
@@ -136,10 +140,11 @@ Rendering an Rmd document **in a new R session** means that none of the objects 
 ### Your turn
 
 1.  In your R console, at the prompt, input the following and hit Enter: `x <- 2021`
+
 2.  Add a code chunk here. Enter `x` in the code chunk:
 
-
 3.  Knit the document and notice the error. That occurs because the Rmd file was rendered in a new session in which `x` did not exist.
+
 4.  Delete the code chunk.
 
 ### Integrate comments from your colleagues
@@ -154,21 +159,22 @@ You could hand your entire project (with good directory structure, RStudio Proje
 
 ## Visual editor
 
-Click on the compass on the upper right. Take a look at the editor options...it looks more like a WYSIWYG editor like Word, but it maintains the source document. This makes it really easy to format your text, or add in items like links, images, math, and citations.
+Click on the *Visual* button on the upper left. Take a look at the editor options...it looks more like a WYSIWYG editor like Word, but it maintains the source document. This makes it really easy to format your text, or add in items like links, images, math, and citations.
 
 ### Format math equations
 
 Insert: y equals x squared.
 
+
 ### Citations
 
-Insert a citation. You have a `references.bib` file in the `documents` folder. It is an extremely simple file that contains only one citation for the penguins data package we used. Let's put in a citation after this sentence:
+Insert a citation. You have a `references.bib` file in the `documents` folder. It is an simple file that contains citations for tthis project. Let's put in a citation (Horst2020) after this sentence:
 
--   All data are from the **palmerspenguins** package
+-   All data are from the **palmerspenguins** package 
 
-For the citations to work, the R Markdown file needs to know where to look for the citations. We specify this by adding `bibliography: file.bib` to the header. This will assume the bib file is in the same directory as the Rmd file.
+For the citations to work, the R Markdown file needs to know where to look for the citations. We specify this by adding `bibliography: file.bib` to the header. (See line 4.)
 
-Also note that the Visual Editor Citation feature connects with Zotero. If you aren't using Zotero, you should! Check out UVA Library's next [Zotero workshop](https://cal.lib.virginia.edu/event/7525510) on October 6, 2021.
+Also note that the Visual Editor Citation feature connects with Zotero. If you aren't using Zotero, you should! It is really useful for organizing your citations.
 
 The full citation automatically shows up at the end of the document.
 
@@ -277,11 +283,15 @@ We can update our document to the `readable` theme and `textmate` highlighting.
 
     title: "Reporting and Presenting Data using R Markdown"
     author: "Jenn Huck"
-    date: "Sept 28, 2021"
+    date: "Oct 18, 2022"
     output: 
       html_document:
         theme: readable
         highlight: textmate
     bibliography: references.bib
+    
+## What the future holds: Quarto
+
+RStudio has recently released Quarto, which is suitable for languages beyond R (Python, Javascript, and Julia). R Markdown isn't going anywhere any time soon. Quarto is definitely worth checking out if you like the idea of combining R and Python, etc., in one document.
 
 ## References
