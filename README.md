@@ -32,7 +32,7 @@ If you have never worked with R Markdown before, a dialog will pop up titled "In
 
 This part doubles as instructor notes, or notes to follow along outside of the workshop. 
 
-The Penguins project is the demo part of the ["Reproducible Analysis and Documentation with R and RStudio" workshop](https://jennhuck.github.io/workshops/repro_analysis_R_RStudio.html).  Start there, and follow the instructions under "Your Turn" (the worms project).
+The Penguins project is the demo part of the ["Reproducible Analysis and Documentation with R and RStudio" workshop](https://github.com/jennhuck/reproAnalysis).  Start there, and follow the instructions under "Your Turn" (the polar-bear project).
 
 Penguins project directory:
 
